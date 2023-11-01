@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Detail from "./Detail";
 
 function App() {
   // const [number, setnumber] = useState(0);
@@ -25,12 +26,12 @@ function App() {
     <div>
       <h1>{}</h1>
       <div>
-        {/* <h1>{number}</h1>
-        <button onClick={() => setnumber(number + 1)}>pluse</button> */}
-        <input type="text" name="fname" onChange={handle} />
+        {/* <input type="text" name="fname" onChange={handle} />
         <input type="text" name="lname" onChange={handle} />
 
-        <button>Submit</button>
+        <button>Submit</button> */}
+
+        <Detail />
       </div>
     </div>
   );
