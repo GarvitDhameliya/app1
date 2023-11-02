@@ -20,6 +20,19 @@ const Detail = () => {
     setresult([...result, val]);
   };
 
+  const handleDelete = (name) => {
+    console.log(name);
+    // delete result[index];
+
+    // console.log(result);
+
+    // result.splice(index, 1);
+    // setresult(result);
+    // console.log(res, "result");
+
+    setresult(result.filter((e) => e.author !== name));
+  };
+
   useEffect(() => {
     setresult(data);
   }, []);
@@ -35,6 +48,7 @@ const Detail = () => {
             <>
               <h1>{val.author}</h1>
               <h1>{val.title}</h1>
+              <button onClick={() => handleDelete(val.author)}>Delete</button>
             </>
           );
         })}
