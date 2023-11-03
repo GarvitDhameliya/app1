@@ -1,5 +1,10 @@
 import { useState } from "react";
 import Detail from "./Detail";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./Navbar";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
 
 function App() {
   // const [number, setnumber] = useState(0);
@@ -31,7 +36,13 @@ function App() {
 
         <button>Submit</button> */}
 
-        <Detail />
+        {/* <Detail /> */}
+        <Navbar />
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/about" exact element={<About />} />
+          <Route path="/contact" exact element={<Contact />} />
+        </Routes>
       </div>
     </div>
   );
