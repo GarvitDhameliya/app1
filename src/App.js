@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
+import Result from "./Result";
 
 function App() {
   // const [number, setnumber] = useState(0);
@@ -42,6 +43,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/about" exact element={<About />} />
           <Route path="/contact" exact element={<Contact />} />
+          <Route path="/:id" exact element={<Result />} />
         </Routes>
       </div>
     </div>
