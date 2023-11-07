@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "./components/commen/Commen";
 
 const Home = () => {
   const data = [
@@ -23,6 +24,12 @@ const Home = () => {
       title: "card-4",
       desc: "this is card 4",
     },
+
+    {
+      id: 5,
+      title: "garvit",
+      desc: "this is card 4",
+    },
   ];
 
   return (
@@ -40,7 +47,7 @@ const Home = () => {
                 <h5 class="card-title">{val.title}</h5>
                 <p class="card-text">{val.desc}</p>
                 <Link to={`/${val.title}`} class="btn btn-primary">
-                  view
+                  <Button value="show" />
                 </Link>
               </div>
             </div>

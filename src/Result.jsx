@@ -2,9 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const Result = () => {
-  const { id } = useParams();
+  const { title } = useParams();
 
-  console.log(id, "res");
+  console.log(title, "res");
 
   const data = [
     {
@@ -27,9 +27,14 @@ const Result = () => {
       title: "card-4",
       desc: "this is card 4",
     },
+    {
+      id: 5,
+      title: "garvit",
+      desc: "this is card 4",
+    },
   ];
 
-  const result = data.filter((e) => e.title == id);
+  const result = data.filter((e) => e.title == title);
 
   console.log(result, "result");
   return (
