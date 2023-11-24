@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Detail from "./Detail";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -8,6 +8,8 @@ import Contact from "./Contact";
 import Result from "./Result";
 
 function App() {
+  const [data, setdata] = useState([]);
+
   // const [number, setnumber] = useState(0);
 
   const [value, setvalue] = useState({});
@@ -28,6 +30,17 @@ function App() {
 
   console.log(value);
 
+  console.log(data, "res");
+
+  useEffect(() => {
+    fetch("http://localhost:3001/posts").then((res) => {
+      res.json().then((result) => {
+        console.log(result);
+        setdata(result || []);
+      });
+    });
+  }, []);
+
   return (
     <div>
       <h1>{}</h1>
@@ -38,13 +51,23 @@ function App() {
         <button>Submit</button> */}
 
         {/* <Detail /> */}
-        <Navbar />
+        {/* <Navbar />
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/about" exact element={<About />} />
           <Route path="/contact" exact element={<Contact />} />
           <Route path="/:title" exact element={<Result />} />
-        </Routes>
+        </Routes> */}
+
+        {data?.map((val, ind) => {
+          return (
+            <>
+              <h1>{val.id}</h1>
+              <h2>{val.author}</h2>
+              <p>{val.title}</p>
+            </>
+          );
+        })}
       </div>
     </div>
   );
