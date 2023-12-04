@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Detail from "./Detail";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -6,41 +6,37 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Result from "./Result";
+import axios from "axios";
 
 function App() {
   const [data, setdata] = useState([]);
 
-  // const [number, setnumber] = useState(0);
-
-  const [value, setvalue] = useState({});
-
-  // const submit = () => {
-  //   const data = {
-  //     firstName: value,
-  //   };
-
-  //   console.log(data);
-  // };
-
-  const handle = (e) => {
-    // console.log(e.target.value);
-
-    setvalue({ ...value, [e.target.name]: e.target.value });
-  };
-
-  console.log(value);
-
-  console.log(data, "res");
+  const title = useRef();
+  const author = useRef();
 
   useEffect(() => {
-    fetch("http://localhost:3001/posts").then((res) => {
-      res.json().then((result) => {
-        console.log(result);
-        setdata(result || []);
-      });
+    axios.get("http://localhost:3001/posts").then((res) => {
+      // console.log(res.data);
+      setdata(res.data || []);
     });
   }, []);
 
+  function handlesubmit() {
+    const data = {
+      title: title.current.value,
+      author: author.current.value,
+    };
+
+    // console.log(data);
+
+    axios.post("http://localhost:3001/posts", data).then((res) => {
+      console.log(res.data);
+
+      setdata(...data, [res.data]);
+    });
+  }
+
+  console.log(data, "data");
   return (
     <div>
       <h1>{}</h1>
@@ -59,12 +55,16 @@ function App() {
           <Route path="/:title" exact element={<Result />} />
         </Routes> */}
 
+        <input type="text" name="title" ref={title} />
+        <input type="text" name="author" ref={author} />
+        <button onClick={handlesubmit}>submit</button>
+
         {data?.map((val, ind) => {
           return (
             <>
               <h1>{val.id}</h1>
-              <h2>{val.author}</h2>
-              <p>{val.title}</p>
+              <h2>{val.title}</h2>
+              <h3>{val.author}</h3>
             </>
           );
         })}

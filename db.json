@@ -1,0 +1,124 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "hello",
+      "author": "typicode"
+    },
+    {
+      "title": "neha",
+      "author": "kikani",
+      "id": 3
+    },
+    {
+      "title": "garit",
+      "author": "dhameliya",
+      "id": 4
+    },
+    {
+      "title": "Garvit",
+      "author": "Dhameliya",
+      "id": 5
+    },
+    {
+      "title": "asddad",
+      "author": "sfsafa",
+      "id": 6
+    },
+    {
+      "title": "dasd",
+      "author": "sfasf",
+      "id": 7
+    },
+    {
+      "title": "gsge",
+      "author": "gretwr",
+      "id": 8
+    },
+    {
+      "title": "qwer",
+      "author": "qewr",
+      "id": 9
+    },
+    {
+      "title": "hello",
+      "author": "hello",
+      "id": 10
+    },
+    {
+      "title": "hello",
+      "author": "hello",
+      "id": 11
+    },
+    {
+      "title": "dasd",
+      "author": "fsdewf",
+      "id": 12
+    },
+    {
+      "title": "sadasd",
+      "author": "af",
+      "id": 13
+    },
+    {
+      "title": "asdasda",
+      "author": "asdasdasdasda",
+      "id": 14
+    },
+    {
+      "title": "qwer",
+      "author": "qwret",
+      "id": 15
+    },
+    {
+      "title": "asdfdg",
+      "author": "etyt",
+      "id": 16
+    },
+    {
+      "title": "qewq`qweqwe",
+      "author": "wqewe",
+      "id": 17
+    },
+    {
+      "title": "qewq`qweqwe",
+      "author": "wqewe",
+      "id": 18
+    },
+    {
+      "title": "asdad",
+      "author": "sadasda",
+      "id": 19
+    },
+    {
+      "title": "qew",
+      "author": "erh",
+      "id": 20
+    },
+    {
+      "title": "sads",
+      "author": "asfs",
+      "id": 21
+    },
+    {
+      "title": "dasdasd",
+      "author": "safefeswer",
+      "id": 22
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
