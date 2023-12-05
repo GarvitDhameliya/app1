@@ -1,16 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "id": 2,
-      "title": "hello",
-      "author": "typicode"
-    },
-    {
       "title": "neha",
       "author": "kikani",
       "id": 3
@@ -109,15 +99,114 @@
       "title": "dasdasd",
       "author": "safefeswer",
       "id": 22
-    }
-  ],
-  "comments": [
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "title": "sd",
+      "author": "sfsdfs",
+      "id": 23
+    },
+    {
+      "title": "sd",
+      "author": "sfsdfs",
+      "id": 24
+    },
+    {
+      "title": "13456`234",
+      "author": "12345",
+      "id": 25
+    },
+    {
+      "title": "hello",
+      "author": "hello",
+      "id": 26
+    },
+    {
+      "title": "hello",
+      "author": "hello",
+      "id": 27
+    },
+    {
+      "title": "asd",
+      "author": "asd",
+      "id": 28
+    },
+    {
+      "title": "asd",
+      "author": "asd",
+      "id": 29
+    },
+    {
+      "title": "asd",
+      "author": "adsd",
+      "id": 30
+    },
+    {
+      "title": "dad",
+      "author": "asda",
+      "id": 31
+    },
+    {
+      "title": "dad",
+      "author": "asda",
+      "id": 32
+    },
+    {
+      "title": "adas",
+      "author": "fsdf",
+      "id": 33
+    },
+    {
+      "title": "",
+      "author": "",
+      "id": 34
+    },
+    {
+      "title": "adasd",
+      "author": "asasd",
+      "id": 35
+    },
+    {
+      "title": "adas",
+      "author": "asdasd",
+      "id": 36
+    },
+    {
+      "title": "asd",
+      "author": "asdsad",
+      "id": 37
+    },
+    {
+      "title": "Garvit Garvit",
+      "author": "adas",
+      "id": 38
+    },
+    {
+      "title": "hello ",
+      "author": "hello",
+      "id": 39
+    },
+    {
+      "title": "qwer",
+      "author": "sfrh",
+      "id": 40
+    },
+    {
+      "title": "wqee`wrwrwee",
+      "author": "wdwerw",
+      "id": 41
+    },
+    {
+      "title": "asds",
+      "author": "sdfs",
+      "id": 42
+    },
+    {
+      "title": "sdafsda",
+      "author": "sdfsdf",
+      "id": 43
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
