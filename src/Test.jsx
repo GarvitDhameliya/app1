@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 const Test = () => {
   const [data, setdata] = useState([]);
+  const [update, setupdate] = useState({});
   const title = useRef();
   const author = useRef();
 
@@ -33,8 +34,32 @@ const Test = () => {
 
     axios.delete(`http://localhost:3001/posts/${id}`).then(() => {
       //   getData();
-      setdata();
+      setdata(data.filter((e) => e.id !== id));
     });
+  };
+
+  const updateData = (id, ind) => {
+    console.log(id, "id");
+    console.log(ind, "index");
+
+    const final = data[ind];
+    setupdate(final);
+    console.log(final);
+  };
+
+  const finalUpdate = (e) => {
+    setupdate({ ...update, [e.target.name]: e.target.value });
+  };
+
+  const final = () => {
+    console.log(update, "update");
+
+    axios
+      .put(`http://localhost:3001/posts/${update.id}`, update)
+      .then((res) => {
+        console.log(res.data, "update res");
+        // setdata()
+      });
   };
 
   useEffect(() => {
@@ -46,15 +71,31 @@ const Test = () => {
       <input type="text" name="title" ref={title} />
       <input type="text" name="author" ref={author} />
       <button onClick={addData}>add</button>
+      <br />
+      <input
+        type="text"
+        name="title"
+        value={update.title}
+        onChange={finalUpdate}
+      />
+      <input
+        type="text"
+        name="author"
+        value={update.author}
+        onChange={finalUpdate}
+      />
+      <button onClick={final}>update</button>
+      <button>cancel</button>
 
       <div>
         {data?.map((val, ind) => {
           return (
-            <div>
+            <div key={ind}>
               <h1>{val.id}</h1>
               <h2>{val.title}</h2>
               <h3>{val.author}</h3>
               <button onClick={() => deleteData(val.id)}>delete</button>
+              <button onClick={() => updateData(val.id, ind)}>update</button>
             </div>
           );
         })}
